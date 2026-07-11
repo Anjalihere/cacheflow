@@ -9,7 +9,6 @@ A C++ order matching engine implementing price-time priority matching, O(1) orde
 
 ## Table of Contents
 - [Overview](#overview)
-- [Scope](#scope)
 - [Architecture](#architecture)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -18,7 +17,6 @@ A C++ order matching engine implementing price-time priority matching, O(1) orde
 - [Testing](#testing)
 - [Project Structure](#project-structure)
 - [Design Decisions](#design-decisions)
-- [Roadmap](#roadmap)
 - [License](#license)
 
 ---
@@ -156,9 +154,9 @@ cacheflow/
 
 ## Design Decisions
 
-- **`std::list` for per-price-level FIFO queues:** erasing an element doesn't invalidate other iterators, which is what makes O(1) cancellation (Phase 2 of the roadmap) possible without rebuilding index pointers.
+- **`std::list` for per-price-level FIFO queues:** erasing an element doesn't invalidate other iterators, which is what makes O(1) cancellation possible without rebuilding index pointers.
 - **Integer tick prices, never floats:** avoids floating-point comparison/rounding issues when matching on exact price equality.
-- **Direct-indexed price levels over a balanced tree:** order flow in practice clusters near the mid-price, so a bounded array indexed by tick offset gives O(1) level access instead of O(log n) — at the cost of needing a defined price range. See `PROJECT_ROADMAP.md` Phase 4 for the full tradeoff discussion.
+- **Direct-indexed price levels over a balanced tree:** order flow in practice clusters near the mid-price, so a bounded array indexed by tick offset gives O(1) level access instead of O(log n) — at the cost of needing a defined price range.
 - **Pooled allocation for `Order` objects:** avoids per-order `malloc`/`free` overhead on the hot path.
 
 
