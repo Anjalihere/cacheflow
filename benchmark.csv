@@ -1,0 +1,10 @@
+name,operations,seconds,throughput,p50_ns,p95_ns,p99_ns
+baseline/add-only,10000,0.0147347,678672,1125,2750,4875
+baseline/cancel-only,10000,0.00256638,3.89655e+06,84,708,750
+baseline/match-heavy,10000,0.0102592,974738,875,1208,1334
+direct-indexed/add-only,10000,0.011223,891024,958,1750,2416
+direct-indexed/cancel-only,10000,0.00206908,4.83306e+06,83,459,500
+direct-indexed/match-heavy,10000,0.00885796,1.12893e+06,750,875,958
+pooled-direct-indexed/add-only,10000,0.0087595,1.14162e+06,750,1333,1792
+pooled-direct-indexed/cancel-only,10000,0.00162971,6.13606e+06,83,334,375
+pooled-direct-indexed/match-heavy,10000,0.0073825,1.35455e+06,667,792,834
