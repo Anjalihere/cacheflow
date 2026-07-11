@@ -2,6 +2,8 @@
 
 A C++ order matching engine implementing price-time priority matching, O(1) order cancellation, and a benchmark-driven optimization pass from a balanced-tree order book to a direct-indexed, pool-allocated one.
 
+Continuous integration runs through GitHub Actions, and the project is released under the MIT License.
+
 [![CI](https://github.com/Anjalihere/cacheflow/actions/workflows/ci.yml/badge.svg)](https://github.com/Anjalihere/cacheflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
